@@ -6,7 +6,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF7CF79D),
+        backgroundColor: Color(0xFF87e69a),
         body: Container(
           margin: EdgeInsets.symmetric(vertical: 35, horizontal: 15),
           width: 330,
@@ -28,7 +28,7 @@ class Login extends StatelessWidget {
                             Icons.arrow_back,
                             size: 20,
                           ),
-                          color: Color(0xFF7CF79D),
+                          color: Color(0xFF87e69a),
                           alignment: Alignment.center,
                           onPressed: () {
                             Navigator.pop(context);
@@ -119,7 +119,7 @@ class Login extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFF3b3a39)),
+                            color: Color(0xFF384a3c)),
                       ),
                     ),
                     Card(

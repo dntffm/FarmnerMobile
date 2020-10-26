@@ -26,7 +26,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF7CF79D),
+        backgroundColor: Color(0xFF87e69a),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -67,9 +67,12 @@ class LandingPage extends StatelessWidget {
                                     new MaterialPageRoute(
                                         builder: (context) => Daftar()));
                               },
-                              child: Text("Daftar")),
+                              child: Text(
+                                "Daftar",
+                                style: TextStyle(color: Color(0xFF87e69a)),
+                              )),
                           RaisedButton(
-                            color: Color(0xFF7CF79D),
+                            color: Color(0xFF87e69a),
                             onPressed: () {
                               Navigator.push(
                                   context,

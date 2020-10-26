@@ -6,7 +6,7 @@ class Daftar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF7CF79D),
+        backgroundColor: Color(0xFF87e69a),
         body: Container(
           margin: EdgeInsets.symmetric(vertical: 35, horizontal: 15),
           width: 330,
@@ -24,12 +24,9 @@ class Daftar extends StatelessWidget {
                         color: Colors.white,
                       ),
                       child: IconButton(
-                          icon: Icon(
-                            Icons.arrow_back,
-                            size: 20,
-                          ),
-                          color: Color(0xFF7CF79D),
-                          alignment: Alignment.center,
+                          icon: Icon(Icons.arrow_back,
+                              size: 20, textDirection: TextDirection.rtl),
+                          color: Color(0xFF87e69a),
                           onPressed: () {
                             Navigator.pop(context);
                           })),
@@ -66,7 +63,7 @@ class Daftar extends StatelessWidget {
                                 const EdgeInsetsDirectional.only(start: 12),
                             child: Icon(
                               Icons.alternate_email,
-                              color: Color(0xFF3b3a39),
+                              color: Color(0xFF384a3c),
                             ),
                           ),
                           filled: true,
