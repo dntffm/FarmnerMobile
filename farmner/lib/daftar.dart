@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class Daftar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +44,7 @@ class Login extends StatelessWidget {
                 children: [
                   Padding(padding: EdgeInsets.symmetric(vertical: 50)),
                   Text(
-                    "Login",
+                    "Daftar",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -115,7 +115,7 @@ class Login extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                       child: Text(
-                        "Login",
+                        "Daftar",
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,

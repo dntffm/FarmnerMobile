@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:farmner/daftar.dart';
 import 'package:farmner/login.dart';
 import 'package:flutter/material.dart';
 
@@ -59,8 +60,16 @@ class LandingPage extends StatelessWidget {
                           EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                       child: Row(
                         children: [
-                          FlatButton(onPressed: () {}, child: Text("Daftar")),
+                          FlatButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) => Daftar()));
+                              },
+                              child: Text("Daftar")),
                           RaisedButton(
+                            color: Color(0xFF7CF79D),
                             onPressed: () {
                               Navigator.push(
                                   context,
