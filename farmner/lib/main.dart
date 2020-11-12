@@ -85,11 +85,11 @@ class LandingPage extends StatelessWidget {
                             padding: EdgeInsets.all(0),
                             child: Container(
                               decoration: BoxDecoration(
-                                gradient: LinearGradient(colors: <Color>[
+                                /* gradient: LinearGradient(Colors: <Color>[
                                   Color(0x7CF79D),
                                   Color(0x7CF79D),
                                   Color(0x7CF79D)
-                                ]),
+                                ]), */
                               ),
                               child: Text(
                                 "Login",

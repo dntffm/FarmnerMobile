@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:farmner/home.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -110,7 +111,9 @@ class Login extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15))),
                     ),
                     RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, new MaterialPageRoute(builder: (context) => HomePage()));
+                      },
                       color: Color(0xFFFFFFFF),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
