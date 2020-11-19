@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:farmner/daftar.dart';
 import 'package:farmner/login.dart';
+import 'package:farmner/select.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MainApp());
@@ -65,7 +66,7 @@ class LandingPage extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     new MaterialPageRoute(
-                                        builder: (context) => Daftar()));
+                                        builder: (context) => SelectRole()));
                               },
                               child: Text(
                                 "Daftar",

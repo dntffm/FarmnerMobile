@@ -17,6 +17,3 @@ Laporan pembaruan progress Farmner Partner 28 Oktober 2020 :
 ![Landing Page](https://user-images.githubusercontent.com/54970248/97441574-74f71400-195b-11eb-9ea7-f2c630dd604d.jpg)
 ![Login](https://user-images.githubusercontent.com/54970248/97441583-76c0d780-195b-11eb-8e1e-633b90528086.jpg)
 ![Register](https://user-images.githubusercontent.com/54970248/97441588-788a9b00-195b-11eb-825c-cd52b555ff36.jpg)
-
-
-`
