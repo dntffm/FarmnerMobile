@@ -1,3 +1,5 @@
+import 'package:farmner/HomeViewWidget.dart';
+import 'package:farmner/MymarketViewWidget.dart';
 import 'package:farmner/history.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +23,8 @@ class _HomeStateFulWidgetState extends State<HomeStateful>{
   int _currentIndex = 0;
 
   List<Widget> _menuOptions = <Widget> [
-    Text("Home"),
-    Text("Next"),
+    HomeViewWidget(),
+    MymarketViewWidget(),
     HistoryWidget(),
     Text("The next"),
   ];
@@ -37,6 +39,12 @@ class _HomeStateFulWidgetState extends State<HomeStateful>{
     return Scaffold(
       body: Stack(
         children: [
+          Positioned(child: Card(
+              margin: EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(38)),
+            ),
+          ),
           Center(
             child : _menuOptions.elementAt(_currentIndex)
           ),
