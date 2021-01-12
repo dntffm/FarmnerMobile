@@ -5,15 +5,26 @@ class HistoryWidget extends StatelessWidget {
  Widget build(BuildContext context) {
    return Scaffold(
       appBar: AppBar(
-        title: Text("Histori Transaksi"),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Image.asset(
+                    'assets/images/leaf.png',
+                    height: 30,
+                    width: 30,
+                  ),
         backgroundColor: Color(0xFF87e69a),
-        
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom : Radius.circular(20)
+          )
+        ),
       ),
      body: new ListDisplay(),
    );
  }
 }
 
+// ignore: must_be_immutable
 class ListDisplay extends StatelessWidget{
   var data = [
    "A","B"

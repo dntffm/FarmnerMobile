@@ -1,5 +1,7 @@
+import 'package:farmner/AddViewWidget.dart';
 import 'package:farmner/HomeViewWidget.dart';
 import 'package:farmner/MymarketViewWidget.dart';
+import 'package:farmner/ProfileViewWidget.dart';
 import 'package:farmner/history.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +27,9 @@ class _HomeStateFulWidgetState extends State<HomeStateful>{
   List<Widget> _menuOptions = <Widget> [
     HomeViewWidget(),
     MymarketViewWidget(),
+    AddViewWidget(),
     HistoryWidget(),
-    Text("The next"),
+    ProfileViewWidget(),
   ];
 
   void _onTap(int index){
@@ -78,6 +81,10 @@ class _HomeStateFulWidgetState extends State<HomeStateful>{
           BottomNavigationBarItem(
             icon: Icon(Icons.shop_two_outlined,color: Colors.white),
             label : "MarketKu"
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add,color: Colors.white,size: 30,),
+            label : " "
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shop,color: Colors.white),
