@@ -28,7 +28,7 @@ class ProfileView extends StatelessWidget{
   @override                               
   Widget build(BuildContext context){
     return Container(
-      height: 150,
+
       child: Card(
         
         shape : RoundedRectangleBorder(
@@ -49,6 +49,12 @@ class ProfileView extends StatelessWidget{
               ),
               title: Text('Bpk. Mustofa'),
               subtitle: Text('JL. Kalimantan no 10 Jember'),
+            ),
+            ElevatedButton(
+              child: Text('Logout'),
+              onPressed: (){
+
+              },
             )
           ]
         ),

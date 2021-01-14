@@ -6,7 +6,10 @@ import 'package:farmner/select.dart';
 import 'package:flutter/material.dart';
 
 
-void main() => runApp(MainApp());
+void main() { 
+  
+  runApp(MainApp());
+}
 
 class MainApp extends StatelessWidget {
   @override

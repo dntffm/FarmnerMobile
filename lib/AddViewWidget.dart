@@ -5,7 +5,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart';
+
 final cameras = availableCameras();
 
 
@@ -215,7 +215,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                   // If the form is valid, display a Snackbar.
                   /* Scaffold.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data'))); */
-                     final filename = basename(path);
+                     //final filename = basename(path);
                 }
               },
               child: Text('Submit'),

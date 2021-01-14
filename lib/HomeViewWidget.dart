@@ -25,7 +25,11 @@ class HomeViewWidget extends StatelessWidget{
 }
 
 class BodyCard extends StatelessWidget{
+  BodyCard(this.namaBarang,this.namaPenjual,this.hargaBarang);
 
+  final String namaBarang;
+  final int hargaBarang;
+  final String namaPenjual;
   @override
   Widget build(BuildContext context){
     return Container(
@@ -40,18 +44,47 @@ class BodyCard extends StatelessWidget{
           onTap: (){
 
           },
-          child: Container(
-            height: 200,
-            width: 400,
-           
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(7),
-              child: Image.asset(
-                    'assets/images/sayur.jpg',
-                    fit: BoxFit.fill,
+          child: Expanded(child: Container(
+            height: 220,
+            width: 390,
+            child: Column(
+              children : [
+                 ClipRRect(
+                    borderRadius: BorderRadius.circular(7),
+                    child: Image.asset(
+                          'assets/images/sayur.jpg',
+                          fit: BoxFit.fill,
+                        ),
                   ),
+                  Row(
+                    children : [
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(this.namaBarang,textAlign: TextAlign.left,style: TextStyle(fontWeight: FontWeight.bold ),),
+                          Text(this.namaPenjual,textAlign: TextAlign.left),
+                          Text(this.hargaBarang.toString(),textAlign: TextAlign.left)
+                        ],
+                      ),
+                      ),
+                      
+                      ElevatedButton(
+                        onPressed : (){},
+                        child : Text('Beli'),
+                        
+                      )
+                    ]
+                  ),
+                  Row(
+                    children : [
+                    ]
+                  )
+                  
+              ]
             )
-          ),
+          ),)
         ),
       ),
     );
@@ -67,7 +100,7 @@ class HomeView extends StatelessWidget{
           slivers: <Widget>[
             SliverList(delegate: SliverChildListDelegate(
               [
-                BodyCard(),
+                BodyCard("","",0),
               ]
             )),
             SliverGrid(
@@ -77,14 +110,15 @@ class HomeView extends StatelessWidget{
               ), 
               delegate: SliverChildListDelegate(
                 [
-                  BodyCard(),
-                  BodyCard(),
-                  BodyCard(),
-                  BodyCard(),
-                  BodyCard(),
-                  BodyCard(),
-                  BodyCard(),
-                  BodyCard(),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
+                  BodyCard("Pak Budi","Kacang Panjang",10000),
                 ]
               )
             )

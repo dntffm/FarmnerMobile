@@ -2,8 +2,24 @@ import 'dart:ui';
 
 import 'package:farmner/home.dart';
 import 'package:flutter/material.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 class Login extends StatelessWidget {
+  final _formKey = GlobalKey<FormState>();
+  final _unameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  _saveLogin(uname,password) async{
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.setString("username", uname);
+    await preferences.setString("password", password);
+  }
+
+  @override
+  void dispose(){
+    _unameController.dispose();
+    _passwordController.dispose();
+    
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,10 +72,17 @@ class Login extends StatelessWidget {
               ),
               Container(
                 width: 250,
-                child: Column(
+                child: Form(key : _formKey,child:Column(
                   children: [
                     Padding(padding: EdgeInsets.symmetric(vertical: 20)),
                     TextFormField(
+                      controller: _unameController,
+                      validator: (value){
+                        if(value.isEmpty){
+                          return 'tidak boleh kosong';
+                        }
+                        return null;
+                      },
                       autofocus: true,
                       decoration: InputDecoration(
                           prefixIcon: Padding(
@@ -88,6 +111,13 @@ class Login extends StatelessWidget {
                     ),
                     Padding(padding: EdgeInsets.symmetric(vertical: 8)),
                     TextFormField(
+                      controller: _passwordController,
+                      validator: (value){
+                        if(value.isEmpty){
+                          return 'tidak boleh kosong';
+                        }
+                        return null;
+                      },
                       autofocus: true,
                       obscureText: true,
                       decoration: InputDecoration(
@@ -112,7 +142,40 @@ class Login extends StatelessWidget {
                     ),
                     RaisedButton(
                       onPressed: () {
-                        Navigator.push(context, new MaterialPageRoute(builder: (context) => HomePage()));
+                        if(_formKey.currentState.validate()){
+                          if(_unameController.text == "paktani" && _passwordController.text == "password"){
+                            return showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context){
+                                return AlertDialog(
+                                  title: Text("Simpan Akses?"),
+                                  content: SingleChildScrollView(
+                                    child : ListBody(children: [
+                                      Text("Simpan Akses ?")
+                                    ],)
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: (){
+                                        _saveLogin(_unameController.text, _passwordController.text);
+                                      }, 
+                                      child: Text('Iya')
+                                    ),
+                                    TextButton(
+                                      onPressed: (){
+                                        Navigator.of(context).pop();
+                                        Navigator.push(context, new MaterialPageRoute(builder: (context) => HomePage()));
+                                      }, 
+                                      child: Text('Tidak')
+                                    )
+                                  ],
+                                );
+                              }
+                            );
+                          }
+                          //Navigator.push(context, new MaterialPageRoute(builder: (context) => HomePage()));
+                        }
                       },
                       color: Color(0xFFFFFFFF),
                       shape: RoundedRectangleBorder(
@@ -132,7 +195,7 @@ class Login extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),)
             ],
           ),
         ));
