@@ -43,8 +43,6 @@ class _ImagePickerViewState extends State<ImagePickerView>{
   File _image;
   final picker = ImagePicker();
 
-  
-
   Future imgFromCam() async {
     final image =  await picker.getImage(source: ImageSource.camera,imageQuality: 50);
 

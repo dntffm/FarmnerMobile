@@ -23,6 +23,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: false,
         backgroundColor: Color(0xFF87e69a),
         body: Container(
           margin: EdgeInsets.symmetric(vertical: 35, horizontal: 15),
